@@ -1,0 +1,22 @@
+{
+  "name": "primerospassos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev src/index.ts",
+    "start": "node build/index.js",
+    "build": "rimraf .build && tsc"
+  },
+  "keywords": [
+    "Curso",
+    "TypeScript"
+  ],
+  "author": "Danilo Farias",
+  "license": "ISC",
+  "description": "Repositório dos códigos feitos no curso de férias da Faculdade SENAC 2024.2.",
+  "devDependencies": {
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.16.2"
+  }
+}
