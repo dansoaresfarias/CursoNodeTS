@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev src/index.ts",
     "start": "node build/index.js",
-    "build": "rimraf .build && tsc"
+    "build": "rimraf .build && tsc",
+    "watch": "tsc --watch"
   },
   "keywords": [
     "Curso",
