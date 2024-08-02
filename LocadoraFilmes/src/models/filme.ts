@@ -12,10 +12,10 @@ export class Filme {
     @Column({ length: 80, nullable: true })
     tituloPT?: string;
 
-    @Column({ type: 'decimal', precision: 3, scale: 2 })
+    @Column({ type: 'decimal', precision: 3, scale: 2})
     preco: number;
 
-    @Column({ type: 'time' })
+    @Column({ type: 'time'})
     duracao: string;
 
     @Column({ type: 'year' })
