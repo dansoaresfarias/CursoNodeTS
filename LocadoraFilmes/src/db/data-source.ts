@@ -12,6 +12,6 @@ export const AppDataSource = new DataSource({
     password: config.PASSWORD,
     database: config.DB,
     entities: [Genero, Filme],
-    synchronize: true,
+    synchronize: false,
     logging: false,
 })

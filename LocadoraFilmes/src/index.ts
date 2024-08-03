@@ -1,6 +1,24 @@
+import express, { Application } from "express";
+import cors, { CorsOptions } from "cors";
+import Routes from "./routes/routes";
 import { AppDataSource } from "./db/data-source";
-import { Genero } from "./models/genero";
-import generoRepository from "./repositories/genero.repository";
+
+export default class Server {
+    constructor(app: Application) {
+        this.config(app);
+        new Routes(app);
+    }
+
+    private config(app: Application): void {
+        const corsOptions: CorsOptions = {
+            origin: "http://localhost:8081"
+        };
+
+        app.use(cors(corsOptions));
+        app.use(express.json());
+        app.use(express.urlencoded({ extended: true }));
+    }
+}
 
 AppDataSource.initialize()
     .then(() => {
@@ -8,15 +26,3 @@ AppDataSource.initialize()
         console.log(`Database is running.`);
     })
     .catch((error) => console.log(error))
-
-// Teste dos Repositorios
-let acao : Genero = new Genero(1, "Ação");
-let terror : Genero = new Genero(2, "Terror");
-let drama : Genero = new Genero(3, "Drama");
-let comedia : Genero = new Genero(4, "Comédia");
-
-// Inserindo os Generos
-generoRepository.save(acao);
-generoRepository.save(terror);
-generoRepository.save(drama);
-generoRepository.save(comedia);
