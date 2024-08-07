@@ -19,6 +19,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.19.2",
+    "locadorafilmes": "file:",
     "mysql2": "^3.11.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20",

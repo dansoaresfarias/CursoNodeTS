@@ -22,7 +22,7 @@ class GeneroRoutes {
     this.router.get("/genero/:id", this.controller.findOne);
 
     // Retorna um genero específico pelo seu nome
-    this.router.get("/genero/:nome", this.controller.findName);
+    this.router.get("/genero/nome/:nome", this.controller.findName);
 
     // Atualizar um genero pelo seu id
     this.router.put("/genero/:id", this.controller.update);

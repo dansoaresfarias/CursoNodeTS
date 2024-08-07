@@ -72,10 +72,12 @@ export default class GeneroController {
 
     async update(req: Request, res: Response) {
         let genero: Genero = req.body;
-        genero.idGenero = parseInt(req.params.id);
-
+        genero.idGenero = parseInt(req.params.id);        
         try {
             await generoRepository.update(genero);
+            res.send({
+                message: `Genero ${genero.nome} atulizado com sucesso!`
+            });
         } catch (err) {
             res.status(500).send({
                 message: `Error ao atualizar o Gênero com id=${genero.idGenero}.`
